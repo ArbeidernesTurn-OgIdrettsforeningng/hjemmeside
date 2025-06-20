@@ -1,29 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ATIF - Arbeidernes turn og idrettsforening</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a
-      >Hei og hallo!
-      <p>
-        Dette skal bli den nye nettsiden til Arbeidernes turn og
-        idrettsforening. Den er for tiden under oppussing.
-      </p>
-      <p>
-        Selv om den ikke er ferdig, så er det mulig å gå via lenken under for å
-        melde seg på til neste semester.
-      </p>
-      <a
-        href="https://club.spond.com/landing/courses/arbdturnif?fbclid=IwY2xjawK_9rJleHRuA2FlbQIxMQBicmlkETBmaW5BMUJtcFhsaUs2TU1nAR5CbbkqmsJgvOdifq5lG9ee1-iJsVxDx_BSFa1NnWvZYj4vUbEkuyySO6Ysvw_aem_0hDXUBD5U2shJA4B1bC_Dw"
-      >
-        Påmelding</a
-      >
-
-      <p>Hilsen styret i ATIF</p>
-    </a>
+    <div id="navbar">
+      <p style="color: red;">Loading navbar...</p>
+    </div>
+    
+    <div class="bg-gray-50 min-h-screen">
+      <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">
+            Hei og hallo! dette er en test på hvor langt vi kan gå med tekst. Skal sjekke om den går utenfor skjermen.s
+          </h1>
+          
+          <div class="space-y-4 text-gray-700">
+            <div class="text-lg leading-relaxed w-full">
+              Dette skal bli den nye nettsiden til Arbeidernes turn og idrettsforening. Den er for tiden under oppussing.
+            </div>
+            
+            <div class="text-lg leading-relaxed w-full">
+              Selv om den ikke er ferdig, så er det mulig å gå via lenken under for å melde seg på til neste semester.
+            </div>
+            
+            <div class="text-center mt-8">
+              <a
+                href="https://club.spond.com/landing/courses/arbdturnif?fbclid=IwY2xjawK_9rJleHRuA2FlbQIxMQBicmlkETBmaW5BMUJtcFhsaUs2TU1nAR5CbbkqmsJgvOdifq5lG9ee1-iJsVxDx_BSFa1NnWvZYj4vUbEkuyySO6Ysvw_aem_0hDXUBD5U2shJA4B1bC_Dw"
+                class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
+              >
+                Påmelding
+              </a>
+            </div>
+            
+            <div class="text-center mt-8 text-gray-600 font-medium w-full">
+              Hilsen styret i ATIF
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="footer">
+      <p style="color: red;">Loading footer...</p>
+    </div>
+    
+    <script>
+      // Update navbar content
+      var navbarElement = document.getElementById('navbar');
+      if (navbarElement) {
+        navbarElement.innerHTML = '<nav class="bg-gray-800 text-white p-4 flex justify-between items-center"><div class="font-bold text-lg">ATIF</div><div class="space-x-4"><a href="index.html" class="hover:text-blue-300">Hjem</a><a href="about.html" class="hover:text-blue-300">Om oss</a><a href="contact.html" class="hover:text-blue-300">Kontakt</a></div></nav>';
+      }
+      
+      // Update footer content
+      var footerElement = document.getElementById('footer');
+      if (footerElement) {
+        footerElement.innerHTML = '<footer class="bg-gray-200 text-center p-4 mt-8 text-gray-700">ATIF. Alle rettigheter reservert.</footer>';
+      }
+    </script>
   </body>
 </html>

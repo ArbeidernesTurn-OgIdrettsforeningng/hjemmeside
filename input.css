@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom text selection styles */
+@layer utilities {
+  /* Make text selection more precise */
+  .text-select-precise {
+    display: inline;
+  }
+  
+  /* Improve text selection for paragraphs */
+  p {
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
+  }
+  
+  /* Center text properly while maintaining precise selection */
+  .text-center {
+    display: block;
+    text-align: center;
+  }
+  
+  .text-center p {
+    display: inline;
+  }
+  
+  /* More specific text selection control */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+  }
+  
+  /* Force text to only take up needed space */
+  .text-content {
+    display: inline;
+    width: auto;
+  }
+  
+  /* Better text selection styling */
+  ::selection {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  ::-moz-selection {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  /* Make text selection more visually appealing */
+  * {
+    -webkit-touch-callout: default;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+
+}
