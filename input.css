@@ -60,5 +60,32 @@
     -ms-user-select: text;
     user-select: text;
   }
-
+  
+  /* Ensure proper box model for all elements */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Ensure divs properly contain their content */
+  div {
+    display: block;
+    width: 100%;
+  }
+  
+  /* Specific styling for text containers */
+  .text-lg {
+    display: block;
+    width: 100%;
+  }
+  
+  /* Logo image constraints */
+  nav img {
+    max-width: 100px !important;
+    max-height: 40px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    overflow: hidden !important;
+    margin-right: 1rem !important;
+  }
 }
