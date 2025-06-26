@@ -1,6 +1,27 @@
-<nav class="text-white p-4 flex justify-between items-center" style="background-color: #1D2092;">
-  <div class="flex items-center">
-    <img src="Logo.png" alt="ATIF logo" class="mr-4">
-    <div class="font-bold text-lg">ATIF</div>
+<nav class="text-white p-4 flex items-center" style="background-color: #1D2092;">
+  <a href="/" class="flex items-center w-auto ml-2 md:ml-6 transition-opacity">
+    <img src="/Logo.png" alt="ATIF logo" class="mr-2 md:mr-4">
+    <div class="font-bold text-sm md:text-lg">ATIF</div>
+  </a>
+  
+  <!-- Desktop menu -->
+  <div class="hidden md:flex space-x-4 md:space-x-6 ml-10 md:ml-20 lg:ml-32">
+    <a href="/" class="hover:text-blue-300 transition-colors">Hjem</a>
+    <a href="/om-oss/" class="hover:text-blue-300 transition-colors">Om oss</a>
   </div>
-</nav> 
+  
+  <!-- Mobile menu button -->
+  <button id="mobile-menu-btn" class="md:hidden text-white ml-auto">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</nav>
+
+<!-- Mobile menu (hidden by default) -->
+<div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white p-4">
+  <div class="flex flex-col space-y-4">
+    <a href="/" class="hover:text-blue-300 transition-colors">Hjem</a>
+    <a href="/om-oss/" class="hover:text-blue-300 transition-colors">Om oss</a>
+  </div>
+</div> 
