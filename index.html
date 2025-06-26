@@ -46,32 +46,6 @@
     <div id="footer">
     </div>
     
-    <script>
-      // Load navbar from external file
-      var navbarElement = document.getElementById('navbar');
-      if (navbarElement) {
-        fetch('/navbar')
-          .then(response => response.text())
-          .then(html => {
-            navbarElement.innerHTML = html;
-          })
-          .catch(error => {
-            console.error('Error loading navbar:', error);
-          });
-      }
-      
-      // Load footer from external file
-      var footerElement = document.getElementById('footer');
-      if (footerElement) {
-        fetch('/footer')
-          .then(response => response.text())
-          .then(html => {
-            footerElement.innerHTML = html;
-          })
-          .catch(error => {
-            console.error('Error loading footer:', error);
-          });
-      }
-    </script>
+    <script src="/script.js"></script>
   </body>
 </html>
