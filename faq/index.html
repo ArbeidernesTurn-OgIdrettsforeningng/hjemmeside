@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATIF - Ofte stilte spørsmål</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div id="navbar">
+    </div>
+    
+    <div class="bg-gray-50 min-h-screen py-8">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+          Ofte stilte spørsmål
+        </h1>
+        
+        <div class="space-y-4">
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Hvordan melder jeg meg på trening?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">Du kan melde deg på trening ved å bruke "Meld på" knappene på treningstilbud-siden, eller kontakte oss direkte via telefon eller e-post. Vi hjelper deg gjerne med å finne riktig gruppe.</p>
+            </div>
+          </div>
+          
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Hva koster medlemskap?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">Medlemskontingenten varierer etter alder og gruppe. Barn og ungdom betaler en lavere kontingent enn voksne. Kontakt oss for nøyaktige priser og betalingsbetingelser.</p>
+            </div>
+          </div>
+          
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Kan jeg prøve trening før jeg melder meg?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">Ja, vi tilbyr vanligvis en gratis prøveuke for nye medlemmer. Dette gir deg mulighet til å oppleve treningen og møte gruppen før du bestemmer deg for å melde deg.</p>
+            </div>
+          </div>
+          
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Hva trenger jeg av utstyr?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">For de fleste treninger trenger du bare komfortable klær som du kan bevege deg fritt i. Vi har klubbklær tilgjengelig for kjøp, men det er ikke påkrevd. Spesielt utstyr for turn kan lånes av klubben.</p>
+            </div>
+          </div>
+          
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Hvordan fungerer konkurransetrening?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">Konkurransetrening krever opptak og er for utøvere som ønsker å satse på turn på et høyere nivå. Dette innebærer mer intensiv trening og deltakelse i konkurranser. Kontakt oss for mer informasjon om opptakskrav.</p>
+            </div>
+          </div>
+          
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Kan foreldre delta i trening med barna?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">Ja, vi har spesielle grupper for foreldre og barn hvor foreldre kan delta sammen med barna sine. Dette er en fin måte å styrke båndet og være aktive sammen.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <p class="text-gray-600 mb-4">Fant du ikke svaret du leter etter?</p>
+          <a href="/kontakt_oss/" class="inline-block py-2 px-6 rounded-lg font-semibold transition-colors duration-200" style="background-color: #1D2092; color: white;" onmouseover="this.style.backgroundColor='#161a75'" onmouseout="this.style.backgroundColor='#1D2092'">Kontakt oss</a>
+        </div>
+      </div>
+    </div>
+    
+    <div id="footer">
+    </div>
+    
+    <script src="/script.js"></script>
+    <script>
+      function toggleFAQ(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('svg');
+        
+        if (content.classList.contains('hidden')) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          content.classList.add('hidden');
+          icon.style.transform = 'rotate(0deg)';
+        }
+      }
+    </script>
+  </body>
+</html> 
