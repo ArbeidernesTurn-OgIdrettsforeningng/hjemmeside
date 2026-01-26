@@ -47,34 +47,71 @@
             <img src="/images/div/Hjemmeside.jpg" alt="ATIF logo" class="w-full max-w-xl lg:max-w-none mx-auto lg:mx-0">
           </div>
         </div>
-        <div class="bg-white rounded-lg shadow-lg p-8 mt-8">
-          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Nyheter</h2>
-          <p class="text-gray-700 leading-relaxed mb-6">
-            Her vil nyttig informasjon, klubbarrangementer og lignende blir publisert!
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="border-2 rounded-xl bg-white p-6 shadow-lg flex flex-col h-full" style="border-color: #1D2092;">
-              <h3 class="text-xl font-semibold mb-3 text-gray-800">Nytt registreringssystem</h3>
-              <p class="text-gray-700 leading-relaxed mb-4">Vi har nå et nytt registreringssystem! Vi har valgt å gå bort fra Rubic som registreringssystem, og velger nå å benytte oss av Spond. 
-                Håper dette gjør det enklere for alle sammen gjennom semesteret, og tiden framover!
-              </p>
-              <p class="text-gray-700 leading-relaxed mb-4">Spond er både et nettsted som vi benytter for medlemsregistrering, men også en applikasjon som vi bruker til å holde dialog mellom klubb og foresatte. Ved påmelding til et parti, tildeles dere i en gruppe i Spond, og dersom dere laster ned applikasjonen, kan dere enkelt følge viktige beskjeder og informasjon fra klubben.
-              </p>
-              <a href="https://club.spond.com/landing/courses/arbdturnif/55C628C5B9A34FB1B039CB008E63DC36/main_products" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block py-2 px-4 rounded-lg font-semibold transition-colors duration-200 text-center" style="background-color: #1D2092; color: white;" onmouseover="this.style.backgroundColor='#161a75'" onmouseout="this.style.backgroundColor='#1D2092'">Registrer deg her</a>
+        <div class="lg:flex lg:items-start lg:gap-8 mt-8">
+          <!-- Video -->
+          <div class="bg-white rounded-lg shadow-lg p-8 lg:w-1/2 mb-8 lg:mb-0">            <video class="w-full rounded-lg" controls>
+              <source src="/videoes/video1.mp4" type="video/mp4">
+              Din nettleser støtter ikke video-elementet.
+            </video>
+          </div>
+          
+          <!-- Nyheter Karusell -->
+          <div class="bg-white rounded-lg shadow-lg p-8 lg:w-1/2">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Nyheter</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+              Her vil nyttig informasjon, klubbarrangementer og lignende blir publisert!
+            </p>
+            <div class="relative">
+              <div id="news-carousel" class="overflow-hidden rounded-lg transition-all duration-500">
+                <div class="flex transition-transform duration-500 ease-in-out" id="news-carousel-track" style="transform: translateX(0%);">
+                  <!-- Slide 1: Nyhet 1 -->
+                  <div class="min-w-full flex-shrink-0 px-2" data-news-count="1">
+                    <div class="border-2 rounded-xl bg-white p-6 shadow-lg flex flex-col h-full" style="border-color: #1D2092;">
+                      <h3 class="text-xl font-semibold mb-3 text-gray-800">Nytt registreringssystem</h3>
+                      <p class="text-gray-700 leading-relaxed mb-4">Vi har nå et nytt registreringssystem! Vi har valgt å gå bort fra Rubic som registreringssystem, og velger nå å benytte oss av Spond. 
+                        Håper dette gjør det enklere for alle sammen gjennom semesteret, og tiden framover!
+                      </p>
+                      <p class="text-gray-700 leading-relaxed mb-4">Spond er både et nettsted som vi benytter for medlemsregistrering, men også en applikasjon som vi bruker til å holde dialog mellom klubb og foresatte. Ved påmelding til et parti, tildeles dere i en gruppe i Spond, og dersom dere laster ned applikasjonen, kan dere enkelt følge viktige beskjeder og informasjon fra klubben.
+                      </p>
+                      <a href="https://club.spond.com/landing/courses/arbdturnif/55C628C5B9A34FB1B039CB008E63DC36/main_products" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block py-2 px-4 rounded-lg font-semibold transition-colors duration-200 text-center" style="background-color: #1D2092; color: white;" onmouseover="this.style.backgroundColor='#161a75'" onmouseout="this.style.backgroundColor='#1D2092'">Registrer deg her</a>
+                    </div>
+                  </div>
+                  <!-- Slide 2: Nyhet 2 -->
+                  <div class="min-w-full flex-shrink-0 px-2" data-news-count="1">
+                    <div class="border-2 rounded-xl bg-white p-6 shadow-lg flex flex-col h-full" style="border-color: #1D2092;">
+                      <h3 class="text-xl font-semibold mb-3 text-gray-800">Oppstart for semesteret</h3>
+                      <p class="text-gray-700 leading-relaxed mb-4">Vi starter opp semesteret i uke 3! For å finne det partiet som passer best for deg, sjekk ut våre treningstilbud eller ta kontakt med oss!
+                      </p>
+                      <a href="https://club.spond.com/landing/courses/arbdturnif/55C628C5B9A34FB1B039CB008E63DC36/main_products" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block py-2 px-4 rounded-lg font-semibold transition-colors duration-200 text-center" style="background-color: #1D2092; color: white;" onmouseover="this.style.backgroundColor='#161a75'" onmouseout="this.style.backgroundColor='#1D2092'">Les mer</a>
+                    </div>
+                  </div>
+                  <!-- Slide 3: Nyhet 3 -->
+                  <div class="min-w-full flex-shrink-0 px-2" data-news-count="1">
+                    <div class="border-2 rounded-xl bg-white p-6 shadow-lg flex flex-col h-full" style="border-color: #1D2092;">
+                      <h3 class="text-xl font-semibold mb-3 text-gray-800">Oppstart RG</h3>
+                      <p class="text-gray-700 leading-relaxed mb-4">Vi starter opp med rytmisk gymnastikk igjen! Vi er glade for å kunne dele at vi etter flere år med opphold, er klare for å starte opp parti i rytmisk gymnastikk! Les mer om tilbudet vårt her:
+                      </p>
+                      <a href="https://club.spond.com/landing/courses/arbdturnif/55C628C5B9A34FB1B039CB008E63DC36/main_products" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block py-2 px-4 rounded-lg font-semibold transition-colors duration-200 text-center" style="background-color: #1D2092; color: white;" onmouseover="this.style.backgroundColor='#161a75'" onmouseout="this.style.backgroundColor='#1D2092'">Les mer</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button id="news-prev-btn" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-opacity z-10" aria-label="Forrige">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button id="news-next-btn" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-opacity z-10" aria-label="Neste">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
             </div>
-            <div class="border-2 rounded-xl bg-white p-6 shadow-lg flex flex-col h-full" style="border-color: #1D2092;">
-              <h3 class="text-xl font-semibold mb-3 text-gray-800">Oppstart for semesteret</h3>
-              <p class="text-gray-700 leading-relaxed mb-4">Vi starter opp semesteret i uke 3! For å finne det partiet som passer best for deg, sjekk ut våre treningstilbud eller ta kontakt med oss!
-              </p>
-              <a href="https://club.spond.com/landing/courses/arbdturnif/55C628C5B9A34FB1B039CB008E63DC36/main_products" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block py-2 px-4 rounded-lg font-semibold transition-colors duration-200 text-center" style="background-color: #1D2092; color: white;" onmouseover="this.style.backgroundColor='#161a75'" onmouseout="this.style.backgroundColor='#1D2092'">Les mer</a>
+            <div class="flex justify-center mt-4 space-x-2" id="news-carousel-indicators">
+              <button class="w-3 h-3 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors cursor-pointer" data-slide="0" aria-label="Slide 1"></button>
+              <button class="w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-500 transition-colors cursor-pointer" data-slide="1" aria-label="Slide 2"></button>
+              <button class="w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-500 transition-colors cursor-pointer" data-slide="2" aria-label="Slide 3"></button>
             </div>
-            <div class="border-2 rounded-xl bg-white p-6 shadow-lg flex flex-col h-full" style="border-color: #1D2092;">
-              <h3 class="text-xl font-semibold mb-3 text-gray-800">Oppstart RG</h3>
-              <p class="text-gray-700 leading-relaxed mb-4">Vi starter opp med rytmisk gymnastikk igjen! Vi er glade for å kunne dele at vi etter flere år med opphold, er klare for å starte opp parti i rytmisk gymnastikk! Les mer om tilbudet vårt her:
-              </p>
-              <a href="https://club.spond.com/landing/courses/arbdturnif/55C628C5B9A34FB1B039CB008E63DC36/main_products" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block py-2 px-4 rounded-lg font-semibold transition-colors duration-200 text-center" style="background-color: #1D2092; color: white;" onmouseover="this.style.backgroundColor='#161a75'" onmouseout="this.style.backgroundColor='#1D2092'">Les mer</a>
-            </div>
-            
           </div>
         </div>
       </div>
