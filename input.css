@@ -72,6 +72,23 @@
     width: 100%;
   }
   
+  /* Dropdown container should not affect navbar layout */
+  .om-oss-dropdown {
+    display: inline-block !important;
+    width: auto !important;
+  }
+  
+  /* Dropdown menu should be positioned absolutely and not affect layout */
+  #om-oss-dropdown-menu {
+    position: absolute !important;
+    width: auto !important;
+  }
+  
+  /* Hide dropdown menu by default */
+  #om-oss-dropdown-menu.hidden {
+    display: none !important;
+  }
+  
   /* Specific styling for text containers */
   .text-lg {
     display: block;
