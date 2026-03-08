@@ -7,6 +7,7 @@ function loadNavbar() {
       .then(html => {
         navbarElement.innerHTML = html;
         // Initialize hamburger menu after navbar is loaded
+        // Note: data-dropdown-initialized attributes are automatically removed when innerHTML replaces elements
         initHamburgerMenu();
         // Initialize navbar scroll functionality after navbar is loaded
         setTimeout(function() {
@@ -55,6 +56,8 @@ function initHamburgerMenu() {
   
   // Initialize Om oss dropdown
   initOmOssDropdown();
+  // Initialize Medlemskap dropdown
+  initMedlemskapDropdown();
 }
 
 // Simple Om oss dropdown functionality
@@ -64,6 +67,13 @@ function initOmOssDropdown() {
   const arrowButton = document.getElementById('om-oss-arrow');
   
   if (!dropdownContainer || !dropdownMenu || !arrowButton) return;
+  
+  // Check if already initialized by looking for a data attribute
+  // This is more reliable than a global flag since elements are replaced when navbar reloads
+  if (dropdownContainer.hasAttribute('data-dropdown-initialized')) {
+    return;
+  }
+  dropdownContainer.setAttribute('data-dropdown-initialized', 'true');
   
   let isClickOpen = false;
   let hideTimeout;
@@ -148,6 +158,102 @@ function initOmOssDropdown() {
       forceCloseMenu();
     }
   });
+}
+
+// Simple Medlemskap dropdown functionality
+function initMedlemskapDropdown() {
+  const dropdownContainer = document.querySelector('.medlemskap-dropdown');
+  const dropdownMenu = document.getElementById('medlemskap-dropdown-menu');
+  const arrowButton = document.getElementById('medlemskap-arrow');
+  
+  if (!dropdownContainer || !dropdownMenu || !arrowButton) return;
+  
+  // Check if already initialized by looking for a data attribute
+  // This is more reliable than a global flag since elements are replaced when navbar reloads
+  if (dropdownContainer.hasAttribute('data-dropdown-initialized')) {
+    return;
+  }
+  dropdownContainer.setAttribute('data-dropdown-initialized', 'true');
+  
+  let isClickOpen = false;
+  let hideTimeout;
+  
+  // Force close menu - always works
+  const forceCloseMenu = function() {
+    clearTimeout(hideTimeout);
+    dropdownMenu.classList.add('hidden');
+    dropdownMenu.style.display = 'none';
+  };
+  
+  // Show menu
+  const showMenu = function() {
+    clearTimeout(hideTimeout);
+    dropdownMenu.classList.remove('hidden');
+    dropdownMenu.style.display = 'block';
+  };
+  
+  // Hide on mouse leave (only if not clicked open)
+  const hideMenu = function() {
+    clearTimeout(hideTimeout);
+    if (!isClickOpen) {
+      hideTimeout = setTimeout(function() {
+        // Check if mouse is still over container or menu
+        const isOverContainer = dropdownContainer.matches(':hover');
+        const isOverMenu = dropdownMenu.matches(':hover');
+        if (!isOverContainer && !isOverMenu && !isClickOpen) {
+          forceCloseMenu();
+        }
+      }, 150);
+    }
+  };
+  
+  // Ensure menu is closed on page load - FIRST THING
+  forceCloseMenu();
+  
+  // Show on hover over container (only if not clicked open)
+  dropdownContainer.addEventListener('mouseenter', function() {
+    if (!isClickOpen) {
+      showMenu();
+    }
+  });
+  
+  // Hide on mouse leave from container
+  dropdownContainer.addEventListener('mouseleave', function(e) {
+    // Check if mouse is moving to menu
+    const relatedTarget = e.relatedTarget;
+    if (relatedTarget && (relatedTarget === dropdownMenu || dropdownMenu.contains(relatedTarget))) {
+      // Mouse is moving to menu, don't hide
+      return;
+    }
+    hideMenu();
+  });
+  
+  // Keep menu open when hovering over menu
+  dropdownMenu.addEventListener('mouseenter', function() {
+    if (!isClickOpen) {
+      showMenu();
+    }
+  });
+  
+  // Hide when mouse leaves menu
+  dropdownMenu.addEventListener('mouseleave', hideMenu);
+  
+  // Toggle on arrow click
+  arrowButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    clearTimeout(hideTimeout);
+    isClickOpen = !isClickOpen;
+    if (isClickOpen) {
+      showMenu();
+    } else {
+      forceCloseMenu();
+    }
+  });
+  
+  // Note: No event listener on the link - let it work completely normally
+  // The link will navigate normally without any JavaScript interference
+  // Menu will close on mouse leave or when clicking the arrow again
 }
 
 // News carousel functionality
@@ -326,59 +432,33 @@ function initNavbarScroll() {
   updateBodyPadding();
   window.addEventListener('resize', updateBodyPadding);
   
-  let lastScrollTop = 0;
-  let scrollThreshold = 20; // Minimum scroll distance to trigger hide/show
   let ticking = false;
-  let isHidden = false;
+  const scrollStart = 0; // Start hiding after this scroll distance
+  const fadeDistance = 200; // Distance over which to completely hide navbar
   
   function updateNavbar() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollDelta = scrollTop - lastScrollTop;
     
     // Ignore bounce back effects - only process valid scroll positions
-    // Check if scrollTop is within valid range (not negative, not beyond max scroll)
     if (scrollTop < 0 || scrollTop > maxScroll + 10) {
       ticking = false;
-      return; // Ignore bounce back or overscroll
-    }
-    
-    // Always show navbar at top of page
-    if (scrollTop <= 10) {
-      navbar.style.transform = 'translateY(0)';
-      navbar.style.opacity = '1';
-      isHidden = false;
-      lastScrollTop = scrollTop;
-      ticking = false;
       return;
     }
     
-    // Only update if scrolled more than threshold
-    if (Math.abs(scrollDelta) < scrollThreshold) {
-      ticking = false;
-      return;
-    }
+    // Calculate progress based on scroll position - smooth glide with scroll
+    // Always use the same calculation for consistency
+    const scrollBeyondStart = Math.max(0, scrollTop - scrollStart);
+    const progress = Math.min(scrollBeyondStart / fadeDistance, 1);
     
-    // Only react to scrolling up if we're not at the very bottom (to prevent bounce back issues)
-    const isNearBottom = scrollTop >= maxScroll - 50;
+    // Smoothly hide navbar as user scrolls down - always calculate, no jumps
+    const navbarHeight = navbar.offsetHeight;
+    const opacity = Math.max(0, 1 - progress);
+    const translateY = -navbarHeight * progress;
     
-    if (scrollDelta > 0 && scrollTop > 50) {
-      // Scrolling down - hide navbar gradually
-      if (!isHidden) {
-        navbar.style.transform = 'translateY(-100%)';
-        navbar.style.opacity = '0';
-        isHidden = true;
-      }
-    } else if (scrollDelta < 0 && !isNearBottom) {
-      // Scrolling up - show navbar gradually (but not if we're near bottom to avoid bounce back)
-      if (isHidden) {
-        navbar.style.transform = 'translateY(0)';
-        navbar.style.opacity = '1';
-        isHidden = false;
-      }
-    }
+    navbar.style.opacity = opacity.toString();
+    navbar.style.transform = `translateY(${translateY}px)`;
     
-    lastScrollTop = scrollTop;
     ticking = false;
   }
   
@@ -421,6 +501,34 @@ function initTrainerImageHeight() {
   setTimeout(matchImageHeight, 100);
 }
 
+// Hero background fade on scroll
+function initHeroFade() {
+  const heroBackground = document.getElementById('hero-background');
+  if (!heroBackground) return;
+  
+  function updateHeroOpacity() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const heroSection = document.getElementById('hero-section');
+    if (!heroSection) return;
+    
+    const heroHeight = heroSection.offsetHeight;
+    const fadeStart = 0;
+    const fadeEnd = heroHeight * 0.8; // Start fading at 80% of hero height
+    
+    let opacity = 1;
+    if (scrollTop > fadeStart && scrollTop < fadeEnd) {
+      opacity = 1 - (scrollTop - fadeStart) / (fadeEnd - fadeStart);
+    } else if (scrollTop >= fadeEnd) {
+      opacity = 0;
+    }
+    
+    heroBackground.style.opacity = Math.max(0, Math.min(1, opacity));
+  }
+  
+  window.addEventListener('scroll', updateHeroOpacity, { passive: true });
+  updateHeroOpacity(); // Initial call
+}
+
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
   loadNavbar();
@@ -428,4 +536,5 @@ document.addEventListener('DOMContentLoaded', function() {
   initNewsCarousel();
   initKlubbklaerCarousel();
   initTrainerImageHeight();
+  initHeroFade();
 }); 

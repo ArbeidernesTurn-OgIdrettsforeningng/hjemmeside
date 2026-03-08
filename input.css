@@ -22,6 +22,13 @@
     text-align: center;
   }
   
+  /* Don't override display for table cells */
+  td.text-center,
+  th.text-center {
+    display: table-cell;
+    text-align: center;
+  }
+  
   .text-center p {
     display: inline;
   }
@@ -77,15 +84,26 @@
     display: inline-block !important;
     width: auto !important;
   }
+  .medlemskap-dropdown {
+    display: inline-block !important;
+    width: auto !important;
+  }
   
   /* Dropdown menu should be positioned absolutely and not affect layout */
   #om-oss-dropdown-menu {
     position: absolute !important;
     width: auto !important;
   }
+  #medlemskap-dropdown-menu {
+    position: absolute !important;
+    width: auto !important;
+  }
   
   /* Hide dropdown menu by default */
   #om-oss-dropdown-menu.hidden {
+    display: none !important;
+  }
+  #medlemskap-dropdown-menu.hidden {
     display: none !important;
   }
   

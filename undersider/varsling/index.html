@@ -10,43 +10,86 @@
     <link rel="shortcut icon" href="/images/icon/favicon.ico?v=3">
     <link rel="apple-touch-icon" href="/images/icon/favicon.png?v=3">
   </head>
-  <body style="background-color: #ecf2ff">
+  <body style="background-color: #ecf2ff; display: flex; flex-direction: column; min-height: 100vh;">
     <div id="navbar">
     </div>
-    
-    <div class="py-8">
-      <div class="container mx-auto px-4 max-w-4xl">
-        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">
-          Varsling
-        </h1>
+
+
+    <div class="py-8 flex-grow">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-12">
+          <h1 class="text-4xl font-bold text-gray-800 mb-4">
+            Varsling
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Vi er opptatt av trivsel og trygghet blant medlemmene våre.
+          </p>
+        </div>
         
-        <div class="border-2 rounded-xl bg-white p-6 shadow-lg" style="border-color: #1D2092;">
-          <div class="space-y-4 text-gray-700">
-            <p class="text-lg">Vi er opptatt av trivsel og trygghet i klubben.</p>
-            
-            <p class="text-lg">Opplever du bekymringsverdige eller uetiske forhold knyttet til Arbeidernes turn- og idrettsforening, eller våre medlemmer?</p>
-            
-            <p class="text-lg">Da ønsker vi gjerne å få vite om det, og vi vil tilstrebe å finne gode løsninger eller hjelp.</p>
-            
-            <p class="text-lg">Vi tar alle varsler alvorlig, og enhver sak behandles i fortrolighet. Dette gjennom to utvalgte styremedlemmer.</p>
-            
-            <div class="mt-6 p-6 bg-blue-100 rounded-xl border-2 shadow-md" style="border-color: #1D2092;">
-              <p class="font-bold text-gray-900 mb-3 text-lg">Varsling skal sendes til følgende e-post:</p>
-              <p class="text-gray-800">
-                <a href="mailto:varslingatif@gmail.com" class="text-blue-700 hover:text-blue-900 underline text-xl font-semibold">varslingatif@gmail.com</a>
-              </p>
-            </div>
-            
-            <div class="mt-6">
-              <p class="font-semibold text-gray-800 mb-2">Mer informasjon om varsling kan du lese på turnforbundet sine nettsider:</p>
-              <p class="text-gray-700">
-                <a href="https://gymogturn.no/verdiarbeid/varsling/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">https://gymogturn.no/verdiarbeid/varsling/</a>
-              </p>
-            </div>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <!-- Card 1: Hva er varsling -->
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4" style="border-left-color: #1D2092;">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Hva er varsling?</h2>
+            <p class="text-gray-700 leading-relaxed text-lg">
+              Har du, eller noen rundt deg opplevd noe du mener det er viktig å si ifra om? Da vil vi gjerne vite om det, slik at vi kan hjelpe til med å finne løsninger eller hjelp.
+            </p>
           </div>
+          
+          <!-- Card 2: Hva kan jeg varsle om -->
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4" style="border-left-color: #1D2092;">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Hva kan jeg varsle om?</h2>
+            <p class="text-gray-700 leading-relaxed mb-4 text-lg">
+              Ulike kritikkveridhge forhold. Eksempler kan være følgende, men listen er ikke uttømmende:
+            </p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-black mr-2 font-bold">•</span>
+                <span>Mobbing</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-black mr-2 font-bold"">•</span>
+                <span>Trakassering</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-black mr-2 font-bold">•</span>
+                <span>Diskriminering</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-black mr-2 font-bold">•</span>
+                <span>Rusmisbruk</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-black mr-2 font-bold">•</span>
+                <span>Brudd på NIFs regelverk eller vedtak</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Varslingsportal card -->
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center border-2 mb-8" style="border-color: #1D2092;">
+          <h2 class=""text-gray-700 leading-relaxed mb-4 text-lg"">Vi mottar varslingssaker gjennom løsningen Mitt Varsel. Når et varsel er mottatt, er det styreleder som vil ta imot varselet.  </h2>
+          <a href="https://portal.mittvarsel.no/skjema/norges-idrettsforbund/SNPZOBQpD7CUt9Er.1532" target="_blank" rel="noopener noreferrer" class="inline-block text-lg font-bold text-black hover:text-blue-900 underline">
+            Mitt Varsel
+            <span class="ml-2">&gt;</span>
+          </a>
+        </div>
+
+        <!-- Read more card -->
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center border-2" style="border-color: #1D2092;">
+          <h2 class="text-gray-700 leading-relaxed mb-4 text-lg">Ønsker du å lese mer om varsling, og hva som skjer med varselet?</h2>
+          <a href="https://gymogturn.no/verdiarbeid/varsling/" target="_blank" rel="noopener noreferrer" class="inline-block text-lg font-bold text-black hover:text-blue-900 underline">
+            Les mer på forbundets sine nettsider
+            <span class="ml-2">&gt;</span>
+          </a>
         </div>
       </div>
     </div>
+
+      
+        
+        
     
     <div id="footer">
     </div>

@@ -24,11 +24,25 @@
       </div>
     </div>
     
-    <a href="/undersider/medlemskap/" class="hover:text-blue-300 transition-colors">Medlemskap</a>
+    <!-- Medlemskap dropdown -->
+    <div class="relative inline-block medlemskap-dropdown">
+      <div class="flex items-center">
+        <a href="/undersider/medlemskap/" class="hover:text-blue-300 transition-colors">Medlemskap</a>
+        <button id="medlemskap-arrow" class="ml-1 hover:text-blue-300 transition-colors cursor-pointer" style="background: none; border: none; padding: 0;">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+      <div id="medlemskap-dropdown-menu" class="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg py-2 min-w-48 hidden z-50" style="display: none;">
+        <a href="/undersider/medlemskap/priser.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors">Priser</a>
+      </div>
+    </div>
+    
     <a href="/undersider/klubbklær/" class="hover:text-blue-300 transition-colors">Klubbklær</a>
     <a href="/undersider/kontakt_oss/" class="hover:text-blue-300 transition-colors">Kontakt oss</a>
     <a href="/undersider/faq/" class="hover:text-blue-300 transition-colors">Ofte stilte spørsmål</a>
-    <a href="/undersider/varsling/" class="hover:text-blue-300 transition-colors ml-auto">Varsling</a>
+    <!-- <a href="/undersider/varsling/" class="hover:text-blue-300 transition-colors ml-auto">Varsling</a> -->
   </div>
   
   <!-- Mobile menu button -->
@@ -47,9 +61,10 @@
     <a href="/undersider/om-oss/støtt-oss.html" class="hover:text-blue-300 transition-colors">Støtt oss</a>
     <a href="/undersider/om-oss/våre-trenere.html" class="hover:text-blue-300 transition-colors">Våre trenere</a>
     <a href="/undersider/medlemskap/" class="hover:text-blue-300 transition-colors">Medlemskap</a>
+    <a href="/undersider/medlemskap/priser.html" class="hover:text-blue-300 transition-colors">Priser</a>
     <a href="/undersider/klubbklær/" class="hover:text-blue-300 transition-colors">Klubbklær</a>
     <a href="/undersider/kontakt_oss/" class="hover:text-blue-300 transition-colors">Kontakt oss</a>
     <a href="/undersider/faq/" class="hover:text-blue-300 transition-colors">Ofte stilte spørsmål</a>
-    <a href="/undersider/varsling/" class="hover:text-blue-300 transition-colors">Varsling</a>
+    <!-- <a href="/undersider/varsling/" class="hover:text-blue-300 transition-colors">Varsling</a> -->
   </div>
 </div>
