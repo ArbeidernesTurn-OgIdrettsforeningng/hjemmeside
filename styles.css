@@ -999,6 +999,10 @@ video {
   overflow: hidden;
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
 .break-words {
   overflow-wrap: break-word;
 }

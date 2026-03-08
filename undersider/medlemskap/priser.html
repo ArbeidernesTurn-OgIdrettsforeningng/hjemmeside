@@ -9,6 +9,32 @@
     <link rel="icon" type="image/png" href="/images/icon/favicon-16.png?v=3">
     <link rel="shortcut icon" href="/images/icon/favicon.ico?v=3">
     <link rel="apple-touch-icon" href="/images/icon/favicon.png?v=3">
+    <style>
+      /* Kompakt styling for mobile */
+      @media (max-width: 1023px) {
+        .price-text-box {
+          padding: 1rem !important;
+        }
+        .price-text-box h2 {
+          font-size: 1.125rem !important;
+        }
+        .price-text-box p {
+          font-size: 0.875rem !important;
+        }
+        .price-table-container {
+          padding: 1rem !important;
+          overflow-x: auto;
+        }
+        .price-table {
+          font-size: 0.75rem !important;
+          min-width: 600px;
+        }
+        .price-table th,
+        .price-table td {
+          padding: 0.5rem !important;
+        }
+      }
+    </style>
   </head>
   <body style="background-color: #ecf2ff">
     <div id="navbar">
@@ -23,7 +49,7 @@
         <div class="lg:flex lg:gap-8 lg:items-stretch">
           <!-- Left column: Text content box -->
           <div class="lg:w-2/5 mb-8 lg:mb-0">
-            <div class="bg-white rounded-lg shadow-lg p-8 space-y-6 text-gray-700 h-full">
+            <div class="bg-white rounded-lg shadow-lg p-8 space-y-6 text-gray-700 h-full price-text-box">
               <div class="space-y-4">
                 <h2 class="text-xl font-semibold text-gray-800">Hva må jeg betale for å være medlem i ATIF?</h2>
                 <p>
@@ -66,8 +92,9 @@
 
           <!-- Right column: Price table box -->
           <div class="lg:w-7/9">
-            <div class="bg-white rounded-lg shadow-lg p-8 h-full flex flex-col">
-              <table class="border-collapse border border-gray-300 bg-white text-base w-full">
+            <div class="bg-white rounded-lg shadow-lg p-8 h-full flex flex-col price-table-container">
+              <div class="overflow-x-auto">
+                <table class="border-collapse border border-gray-300 bg-white text-base w-full price-table">
               <thead>
                 <tr style="background-color: #2d5016;">
                   <th class="border border-gray-300 px-5 py-5 text-left font-semibold text-white">Partier</th>
@@ -143,6 +170,7 @@
                 </tr>
               </tbody>
                 </table>
+              </div>
             </div>
           </div>
         </div>
