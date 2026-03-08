@@ -437,19 +437,25 @@ function initNavbarScroll() {
     return window.innerWidth < 768;
   }
   
+  // On mobile, always keep navbar visible and don't add scroll listener
+  if (isMobile()) {
+    navbar.style.opacity = '1';
+    navbar.style.transform = 'translateY(0)';
+    // Also ensure it stays visible on resize
+    window.addEventListener('resize', function() {
+      if (isMobile()) {
+        navbar.style.opacity = '1';
+        navbar.style.transform = 'translateY(0)';
+      }
+    });
+    return; // Exit early on mobile - don't set up scroll hiding
+  }
+  
   let ticking = false;
   const scrollStart = 0; // Start hiding after this scroll distance
   const fadeDistance = 200; // Distance over which to completely hide navbar
   
   function updateNavbar() {
-    // Don't hide navbar on mobile - always keep it visible
-    if (isMobile()) {
-      navbar.style.opacity = '1';
-      navbar.style.transform = 'translateY(0)';
-      ticking = false;
-      return;
-    }
-    
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     
