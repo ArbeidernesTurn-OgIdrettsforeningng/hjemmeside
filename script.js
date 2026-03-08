@@ -432,11 +432,24 @@ function initNavbarScroll() {
   updateBodyPadding();
   window.addEventListener('resize', updateBodyPadding);
   
+  // Check if we're on mobile (screen width < 768px)
+  function isMobile() {
+    return window.innerWidth < 768;
+  }
+  
   let ticking = false;
   const scrollStart = 0; // Start hiding after this scroll distance
   const fadeDistance = 200; // Distance over which to completely hide navbar
   
   function updateNavbar() {
+    // Don't hide navbar on mobile - always keep it visible
+    if (isMobile()) {
+      navbar.style.opacity = '1';
+      navbar.style.transform = 'translateY(0)';
+      ticking = false;
+      return;
+    }
+    
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     
