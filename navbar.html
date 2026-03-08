@@ -1,6 +1,70 @@
-<nav class="text-white p-4 flex justify-between items-center" style="background-color: #1D2092;">
-  <div class="flex items-center">
-    <img src="Logo.png" alt="ATIF logo" class="mr-4">
-    <div class="font-bold text-lg">ATIF</div>
+<nav id="main-navbar" class="text-white p-4 flex items-center fixed top-0 left-0 right-0 z-50" style="background-color: #1D2092; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease-in-out;">
+  <a href="/" class="flex items-center min-w-fit ml-2 md:ml-6 transition-opacity">
+    <img src="/images/icon/Logo.png" alt="ATIF logo" class="w-8 h-8 md:w-12 md:h-12 mr-2 md:mr-4 object-contain">
+    <div class="font-bold text-sm md:text-lg">ATIF</div>
+  </a>
+  
+  <!-- Desktop menu -->
+  <div class="hidden md:flex space-x-4 md:space-x-6 ml-10 md:ml-20 lg:ml-32 flex-grow">
+    <a href="/undersider/treningstilbud/" class="hover:text-blue-300 transition-colors">Treningstilbud</a>
+    
+    <!-- Om oss dropdown -->
+    <div class="relative inline-block om-oss-dropdown">
+      <div class="flex items-center">
+        <a href="/undersider/om-oss/" class="hover:text-blue-300 transition-colors">Om oss</a>
+        <button id="om-oss-arrow" class="ml-1 hover:text-blue-300 transition-colors cursor-pointer" style="background: none; border: none; padding: 0;">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+      <div id="om-oss-dropdown-menu" class="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg py-2 min-w-48 hidden z-50" style="display: none;">
+        <a href="/undersider/om-oss/støtt-oss.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors">Støtt oss</a>
+        <a href="/undersider/om-oss/våre-trenere.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors">Våre trenere</a>
+      </div>
+    </div>
+    
+    <!-- Medlemskap dropdown -->
+    <div class="relative inline-block medlemskap-dropdown">
+      <div class="flex items-center">
+        <a href="/undersider/medlemskap/" class="hover:text-blue-300 transition-colors">Medlemskap</a>
+        <button id="medlemskap-arrow" class="ml-1 hover:text-blue-300 transition-colors cursor-pointer" style="background: none; border: none; padding: 0;">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+      <div id="medlemskap-dropdown-menu" class="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg py-2 min-w-48 hidden z-50" style="display: none;">
+        <a href="/undersider/medlemskap/priser.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors">Priser</a>
+      </div>
+    </div>
+    
+    <a href="/undersider/klubbklær/" class="hover:text-blue-300 transition-colors">Klubbklær</a>
+    <a href="/undersider/kontakt_oss/" class="hover:text-blue-300 transition-colors">Kontakt oss</a>
+    <a href="/undersider/faq/" class="hover:text-blue-300 transition-colors">Ofte stilte spørsmål</a>
+    <!-- <a href="/undersider/varsling/" class="hover:text-blue-300 transition-colors ml-auto">Varsling</a> -->
   </div>
-</nav> 
+  
+  <!-- Mobile menu button -->
+  <button id="mobile-menu-btn" class="md:hidden text-white ml-auto">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</nav>
+
+<!-- Mobile menu (hidden by default) -->
+<div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white p-4 fixed left-0 right-0 z-40" style="top: 64px;">
+  <div class="flex flex-col space-y-4">
+    <a href="/undersider/treningstilbud/" class="hover:text-blue-300 transition-colors">Treningstilbud</a>
+    <a href="/undersider/om-oss/" class="hover:text-blue-300 transition-colors">Om oss</a>
+    <a href="/undersider/om-oss/støtt-oss.html" class="hover:text-blue-300 transition-colors">Støtt oss</a>
+    <a href="/undersider/om-oss/våre-trenere.html" class="hover:text-blue-300 transition-colors">Våre trenere</a>
+    <a href="/undersider/medlemskap/" class="hover:text-blue-300 transition-colors">Medlemskap</a>
+    <a href="/undersider/medlemskap/priser.html" class="hover:text-blue-300 transition-colors">Priser</a>
+    <a href="/undersider/klubbklær/" class="hover:text-blue-300 transition-colors">Klubbklær</a>
+    <a href="/undersider/kontakt_oss/" class="hover:text-blue-300 transition-colors">Kontakt oss</a>
+    <a href="/undersider/faq/" class="hover:text-blue-300 transition-colors">Ofte stilte spørsmål</a>
+    <!-- <a href="/undersider/varsling/" class="hover:text-blue-300 transition-colors">Varsling</a> -->
+  </div>
+</div>

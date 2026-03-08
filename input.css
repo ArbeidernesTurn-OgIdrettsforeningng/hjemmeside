@@ -22,6 +22,13 @@
     text-align: center;
   }
   
+  /* Don't override display for table cells */
+  td.text-center,
+  th.text-center {
+    display: table-cell;
+    text-align: center;
+  }
+  
   .text-center p {
     display: inline;
   }
@@ -72,6 +79,34 @@
     width: 100%;
   }
   
+  /* Dropdown container should not affect navbar layout */
+  .om-oss-dropdown {
+    display: inline-block !important;
+    width: auto !important;
+  }
+  .medlemskap-dropdown {
+    display: inline-block !important;
+    width: auto !important;
+  }
+  
+  /* Dropdown menu should be positioned absolutely and not affect layout */
+  #om-oss-dropdown-menu {
+    position: absolute !important;
+    width: auto !important;
+  }
+  #medlemskap-dropdown-menu {
+    position: absolute !important;
+    width: auto !important;
+  }
+  
+  /* Hide dropdown menu by default */
+  #om-oss-dropdown-menu.hidden {
+    display: none !important;
+  }
+  #medlemskap-dropdown-menu.hidden {
+    display: none !important;
+  }
+  
   /* Specific styling for text containers */
   .text-lg {
     display: block;
@@ -80,12 +115,64 @@
   
   /* Logo image constraints */
   nav img {
-    max-width: 100px !important;
-    max-height: 40px !important;
-    width: auto !important;
-    height: auto !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
+    width: 32px !important;
+    height: 32px !important;
     object-fit: contain !important;
-    overflow: hidden !important;
-    margin-right: 1rem !important;
   }
+
+  @media (min-width: 768px) {
+    nav img {
+      width: 48px !important;
+      height: 48px !important;
+    }
+  }
+
+  /* Add to your input.css */
+.mobile-menu-slide {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu-slide.show {
+  transform: translateY(0);
+}
+
+/* Grid classes for training cards */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .sm\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .lg\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+}
 }

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATIF - Ofte stilte spørsmål</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="icon" type="image/x-icon" href="/images/icon/favicon.ico?v=3">
+    <link rel="icon" type="image/png" href="/images/icon/favicon-16.png?v=3">
+    <link rel="shortcut icon" href="/images/icon/favicon.ico?v=3">
+    <link rel="apple-touch-icon" href="/images/icon/favicon.png?v=3">
+  </head>
+  <body style="background-color: #ecf2ff">
+    <div id="navbar">
+    </div>
+    
+    <div class="min-h-screen py-8">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+          Ofte stilte spørsmål
+        </h1>
+        <p class="text-gray-600 leading-relaxed mb-4 flex-grow">Her finner du svar på ofte stilte spørsmål. Se gjerne her om du finner svar på det du lurer på, ellers ta gjerne kontakt med oss via "kontakt oss" her på hjemmeiden.</p>
+        <div class="space-y-4">
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Hvordan melder jeg meg på et parti?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">Du kan melde deg på et parti ved å bruke "Meld på" knappene på treningstilbud-siden, eller kontakte oss på e-post. Vi hjelper deg gjerne med å finne riktig gruppe.</p>
+            </div>
+          </div>
+          
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Kan jeg komme på prøvetime?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">
+                Det er mulig å delta på prøvetime, men grunnet forsikring, er det nødt til å sendes inn et skjema med kontaktinformasjon. 
+                <a href="/documents/provetime-ATIF.docx" download class="text-blue-600 hover:text-blue-800 underline font-semibold">Last ned skjemaet her</a> 
+                og send på e-post til atif@gmail.com.
+              </p>            
+            </div>
+          </div>
+
+
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Hva koster medlemskap?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">For å delta på turn i ATIF betales en treningsavgift for partiet du ønsker å delta på, samt en medlemskontingent. Medlemskontingenten er på 200,- og betales 1 gang per kalenderår. Treningsavgiftene varierer fra de ulike partiene, og denne betales 1 gang per semester. </p>
+            </div>
+          </div>
+          
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Når starter første trening, og hvor lenge varer semesteret?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">Første trening begynner i uke 37. Det er treningsfri uke 41, grunnet høstferie, og semesteret avsluttes i uke 49. </p>
+            </div>
+          </div>
+          
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Hva må jeg ha med på trening?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">Vannflaske, bevegelige klær, og langt hår skal være oppsatt i strikk.</p>
+            </div>
+          </div>
+          
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Glemt noe i hallen?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">Hvis noe er gjenglemt på trening, er det mulighet å ta kontakt med tilsynsvakt i hallen under åpningstid.</p>
+            </div>
+          </div>
+          
+          <div class="border-2 rounded-xl bg-white shadow-lg" style="border-color: #1D2092;">
+            <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Kan foreldre være med på trening?</h3>
+                <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">Vi tilbyr gymlekpartier for ulike aldersgrupper. For gymlek foreldre og barn 2022, 2023/2024 er foresatte hjertelig velkomne til å delta i treningen. For øvrige partier ber vi om at foresatte følger treningen fra tibunen i hallen.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <p class="text-gray-600 mb-4">Fant du ikke svaret du leter etter?</p>
+          <a href="/undersider/kontakt_oss/" class="inline-block py-2 px-6 rounded-lg font-semibold transition-colors duration-200" style="background-color: #1D2092; color: white;" onmouseover="this.style.backgroundColor='#161a75'" onmouseout="this.style.backgroundColor='#1D2092'">Kontakt oss</a>
+        </div>
+      </div>
+    </div>
+    
+    <div id="footer">
+    </div>
+    
+    <script src="/script.js"></script>
+    <script>
+      function toggleFAQ(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('svg');
+        
+        if (content.classList.contains('hidden')) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          content.classList.add('hidden');
+          icon.style.transform = 'rotate(0deg)';
+        }
+      }
+    </script>
+  </body>
+</html> 
