@@ -262,7 +262,7 @@ function initNewsCarousel() {
   const carouselContainer = document.getElementById('news-carousel');
   const prevBtn = document.getElementById('news-prev-btn');
   const nextBtn = document.getElementById('news-next-btn');
-  const indicators = document.querySelectorAll('#news-carousel-indicators button');
+  const indicatorsContainer = document.getElementById('news-carousel-indicators');
   
   if (!carouselTrack) return;
   
@@ -272,6 +272,20 @@ function initNewsCarousel() {
     child.classList.contains('min-w-full')
   );
   const totalSlides = slides.length;
+
+  // Dynamisk generer indikator-knapper basert på antall slides
+  const indicators = [];
+  if (indicatorsContainer && totalSlides > 0) {
+    indicatorsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const button = document.createElement('button');
+      button.className = 'w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-500 transition-colors cursor-pointer';
+      button.setAttribute('data-slide', String(i));
+      button.setAttribute('aria-label', `Slide ${i + 1}`);
+      indicatorsContainer.appendChild(button);
+      indicators.push(button);
+    }
+  }
   
   function updateCarousel() {
     carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
