@@ -4,11 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ungdomsturnstevnet 2026 - ATIF</title>
-    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
     <link rel="icon" type="image/x-icon" href="/images/icon/favicon.ico?v=3">
     <link rel="icon" type="image/png" href="/images/icon/favicon-16.png?v=3">
     <link rel="shortcut icon" href="/images/icon/favicon.ico?v=3">
     <link rel="apple-touch-icon" href="/images/icon/favicon.png?v=3">
+    <style>
+      .poster-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 56rem;
+        margin: 0 auto;
+      }
+      .poster-row img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 0.5rem;
+      }
+      @media (min-width: 768px) {
+        .poster-row {
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+      }
+    </style>
   </head>
   <body style="background-color: #ecf2ff">
     <div id="navbar">
@@ -20,9 +41,9 @@
           <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">
             Ungdomsturnstevnet 2026
           </h1>
-          <div class="flex flex-col md:flex-row gap-4 md:gap-6 min-w-0">
-            <img src="/images/stevne26/hoved.jpg" alt="Ungdomsturnstevnet 2026" class="w-full md:w-1/2 h-auto object-contain rounded-lg min-w-0">
-            <img src="/images/stevne26/infoskriv.png" alt="Ungdomsturnstevnet 2026" class="w-full md:w-1/2 h-auto object-contain rounded-lg min-w-0">
+          <div class="poster-row">
+            <img src="/images/stevne26/hoved.jpg" alt="Ungdomsturnstevnet 2026 plakat">
+            <img src="/images/stevne26/infoskriv.png" alt="Informasjon om Ungdomsturnstevnet 2026">
           </div>
         </div>
       </div>
